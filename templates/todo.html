@@ -1,0 +1,16 @@
+{%extends "layout.html" %}
+
+{% block body %}
+<form method="post">
+  {{name}}'s todo list
+<div id="list">
+  {% for task in task_list %}
+    <div>{{task}}</div>
+  {% endfor %}
+</div>
+  Add a task:
+  <br/>
+  Task: <input type="text" name="task"> 
+  <input type="submit" value="Add">
+</form>
+{% endblock %}
