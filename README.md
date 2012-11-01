@@ -64,6 +64,20 @@ You saw the list of packages it installed, but let's tell Heroku that you need F
 ``` pip freeze >requirements.txt```
 let's add requiremets.txt and Procfile to git:
 ```git add requiremts.txt Procfile```
+
+We need to make one more change to really be ready for the web:
+Open up app.py and replace the code below:
+
+```if __name__ == '__main__':
+  app.run()```
+with:
+```
+if __name__ == '__main__':
+    # Bind to PORT if defined, otherwise default to 5000.
+    port = int(os.environ.get('PORT', 5000))
+    app.run(host='0.0.0.0', port=port)
+```
+
 And commit:
 ```git commit -am "I can't wait to run on the web"```
 
