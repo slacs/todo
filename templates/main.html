@@ -1,8 +1,16 @@
 {%extends "layout.html" %}
 
 {% block body %}
+Check these schedules
+<div class="list">
+  {% for user in users %}
+    <a href="/todo/{{user.name}}">{{user.name}}</a>
+    {% endfor %}
+</div>
 
 <form method="post">
+Add a new person
+<br/>
 Name: 
 <input type="text" name="person">
 <input type="submit" value="Check their todo list">

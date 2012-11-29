@@ -2,15 +2,19 @@
 
 {% block body %}
 <form method="post">
-  {{name}}'s todo list
-<div id="list">
+  <h1>{{user.name}}'s todo list</h1>
+<div class="list">
   {% for task in task_list %}
-    <div>{{task}}</div>
+    <div>{{loop.index}} <b>{{task.title}}</b><br/>
+      {{task.description}}
+    </div>
   {% endfor %}
 </div>
   Add a task:
   <br/>
   Task: <input type="text" name="task"> 
+  <br/>
+  Description: <input type="text" name="description"> 
   <input type="submit" value="Add">
 </form>
 {% endblock %}
