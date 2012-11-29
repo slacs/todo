@@ -1,3 +1,9 @@
+#__TODOS__
+install required packages with
+```
+pip install -r requirements.txt
+```
+
 #__TODOS Day Two:__
 ##__Part One: Deployment__
 SLACers love Heroku. Easy deployment, no management, easy addons.
